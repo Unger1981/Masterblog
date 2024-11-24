@@ -15,16 +15,18 @@
         <p><em>Written by {{ post.author }}</em></p>
         <p>{{ post.content }}</p>
         <p>Post ID {{ post.id }}</p>
-        <div class="button">
-            <a href="http://127.0.0.1:5000/delete/{{ post.id }}">Del Post</a>
+        <div class="buttons">
+            <div class="button">
+                <a href="http://127.0.0.1:5000/delete/{{ post.id }}">Del Post</a>
+            </div>
+            <div class="button">
+                <a href="http://127.0.0.1:5000/update/{{ post.id }}">Update</a>
+            </div>
         </div>
-    </div>
+    </div>    
     {% endfor %}
-    
-    <div class="buttons">
         <div class="button">
             <a href="http://127.0.0.1:5000/add">Add Post</a>
         </div>
-    </div>
 </body>
 </html>

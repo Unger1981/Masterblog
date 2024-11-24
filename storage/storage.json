@@ -10,5 +10,17 @@
         "author": "Jane Doe",
         "title": "Second Post",
         "content": "This is another post."
+    },
+    {
+        "id": 4,
+        "author": "David",
+        "title": "Neuer Post mit update",
+        "content": "Test des Updates\r\n"
+    },
+    {
+        "id": 4,
+        "author": "David",
+        "title": "Wolf",
+        "content": "Irgendwas mit Wolf"
     }
 ]

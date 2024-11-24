@@ -9,18 +9,18 @@
 </head>
 <body>
     <h1>Welcome to My Flask Blog!</h1>
-    <form action="/add" method="POST">
-        <div>
+    <form class="form" action="/add" method="POST">
+        <div class="form_input">
             <label for="title">Post Title:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="title" value="Enter title" required>
         </div>
-        <div>
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author" required>
+        <div class="form_input">
+            <label for="author">Author:   </label>
+            <input type="text" id="author" name="author" value="Enter author" required>
         </div>
-        <div>
+        <div class="form_input">
             <label for="content">Content:</label>
-            <textarea id="content" name="content" rows="4" required></textarea>
+            <textarea id="content" name="content" rows="4"  required>Enter text here</textarea>
         </div>
         <button type="submit">Submit Post</button>
     </form>
