@@ -27,6 +27,7 @@ def load_json():
         blog_posts = []
         return blog_posts
 
+
 def save_json(blog_posts):
     """
     Saves blog posts to the JSON file.

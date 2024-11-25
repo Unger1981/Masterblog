@@ -45,25 +45,31 @@ def add():
             post_id = int(request.form.get("post_id", 0))
         except ValueError:
             post_id = 0    
+        
         try:
             blog_posts = load_json()
-            if post_id == 0:
-                post_id = len(blog_posts) + 1    
-                print(post_id)
-                new_post = {"id": post_id, "author": author, "title": title, "content": content}
-                blog_posts.append(new_post)
-            else:
+        except (json.JSONDecodeError, FileNotFoundError) as e:
+            print(f"Error loading JSON: {e}")
+            blog_posts = []
+        if post_id == 0:
+            post_id = len(blog_posts) + 1
+            while True:
                 for post in blog_posts:
-                    if post_id == post["id"]:
-                        post["title"] = title
-                        post["author"] = author
-                        post["content"] = content
-            save_json(blog_posts)
-            return redirect(url_for('index'))
-        except json.JSONDecodeError as e:
-            print(f"Failed to load JSON. Error: {e}")
-        except FileNotFoundError  as e:
-            print(f"File not found. Error: {e}")  
+                    if post["id"] == post_id:
+                        post_id += 1
+                else:
+                    break
+
+            new_post = {"id": post_id, "author": author, "title": title, "content": content}
+            blog_posts.append(new_post)
+        else:
+            for post in blog_posts:
+                if post_id == post["id"]:
+                    post["title"] = title
+                    post["author"] = author
+                    post["content"] = content
+        save_json(blog_posts)
+        return redirect(url_for('index')) 
     elif request.method == 'GET' and not request.args:
         print("elif")
         return render_template('addPost.html')        

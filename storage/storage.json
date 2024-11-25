@@ -12,15 +12,15 @@
         "content": "This is another post."
     },
     {
-        "id": 4,
-        "author": "David",
-        "title": "Neuer Post mit update",
-        "content": "Test des Updates\r\n"
+        "id": 5,
+        "author": "Enter authorfff",
+        "title": "Kitty",
+        "content": "Enter text herefff"
     },
     {
         "id": 4,
-        "author": "David",
-        "title": "Wolf",
-        "content": "Irgendwas mit Wolf"
+        "author": "Enter author",
+        "title": "Enter Test",
+        "content": "Enter text here"
     }
 ]
